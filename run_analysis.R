@@ -35,6 +35,9 @@ features <- read.table(
 x_data <- rbind(x_train, x_test) # merging the training and test data
 y_data <- rbind(y_train, y_test) # merging the training and test activity labels
 
+#Clear env and free some memory
+rm(x_train, y_train, x_test, y_test) # removing the training and test data
+
 #Extract only the mean and the sd for each measurement from x_data
 names(x_data) <- features[, 2] # renaming the columns of x_data with V2 of features
 
@@ -60,6 +63,7 @@ y_data$V1 <- case_when(y_data$V1 == 1 ~ "WALKING",
 #Merging the subject data
 subject_data <- rbind(subject_train, subject_test) # merging the subject data
 names(subject_data) <- "Subject" # renaming the columns of subject_data
+rm(subject_train, subject_test) # removing the training and test subject data
 
 ###########################################
 ####### CREATING THE TIDY DATASET #########
