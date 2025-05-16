@@ -1,8 +1,3 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
 
 # 📊 Human Activity Recognition – Tidy Dataset Project
 
