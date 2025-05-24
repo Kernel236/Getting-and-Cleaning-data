@@ -73,6 +73,12 @@ tidy_data_filtered <- cbind(subject_data, y_data, x_data_filtered) # merging the
 names(tidy_data_filtered)[2] <- "Activity" # renaming the columns of tidy_data_filtered
 
 
+#Caluclate the mean of each variable for each activity and each subject
+tidy_data_filtered_mean <- tidy_data_filtered %>%
+  group_by(Subject, Activity) %>% 
+  summarise(across(where(is.numeric), mean, na.rm = TRUE), .groups = "drop")
+
+
 ######OUTPUT######
 #Saving database in txt file
 write.table(tidy_data_filtered, file = "tidy_data_filtered.txt", row.names = FALSE) # saving the tidy data set in a text file
