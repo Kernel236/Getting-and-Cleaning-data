@@ -81,4 +81,4 @@ tidy_data_filtered_mean <- tidy_data_filtered %>%
 
 ######OUTPUT######
 #Saving database in txt file
-write.table(tidy_data_filtered, file = "tidy_data_filtered.txt", row.names = FALSE) # saving the tidy data set in a text file
+write.table(tidy_data_filtered_mean, file = "tidy_data_filtered.txt", row.names = FALSE) # saving the tidy data set in a text file
